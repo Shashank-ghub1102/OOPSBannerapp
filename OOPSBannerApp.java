@@ -2,7 +2,7 @@
  * OOPSBannerApp
  * Displays OOPS in Banner Format.
  *
- * @author YourName
+ * @author Shashank_R
  * @version 2.0
  */
 public class OOPSBannerApp {
