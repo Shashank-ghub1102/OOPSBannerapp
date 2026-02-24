@@ -1,46 +1,62 @@
-/**
- * OOPSBannerApp UC5
- * Render OOPS Banner using Inline Array Initialization
- */
+public class OOPSBannerApp{
 
-public class OOPSBannerApp {
+    // Method to build letter O
+    public static String[] buildO() {
+        return new String[]{
+                String.join("", "   ***   "),
+                String.join("", "  *   *  "),
+                String.join("", " *     * "),
+                String.join("", " *     * "),
+                String.join("", " *     * "),
+                String.join("", "  *   *  "),
+                String.join("", "   ***   ")
+        };
+    }
+
+    // Method to build letter P
+    public static String[] buildP() {
+        return new String[]{
+                String.join("", " *****   "),
+                String.join("", " *    *  "),
+                String.join("", " *    *  "),
+                String.join("", " ******   "),
+                String.join("", " *       "),
+                String.join("", " *       "),
+                String.join("", " *       ")
+        };
+    }
+
+    // Method to build letter S
+    public static String[] buildS() {
+        return new String[]{
+                String.join("", "  *****  "),
+                String.join("", " *       "),
+                String.join("", " *       "),
+                String.join("", "  ****   "),
+                String.join("", "      *  "),
+                String.join("", "      *  "),
+                String.join("", " *****   ")
+        };
+    }
 
     public static void main(String[] args) {
 
-        // Declare + Initialize + Populate array INLINE
-        String[] lines = {
+        // Populate letters in order O O P S
+        String[][] letters = { buildO(), buildO(), buildP(), buildS() };
 
-            String.join(" ",
-                    " *** ", " *** ", "******", "*****"
-            ),
+        String[] banner = new String[7];
 
-            String.join(" ",
-                    "** **", "** **", "**    ", "**"
-            ),
+        // Combine rows
+        for (int i = 0; i < 7; i++) {
+            String line = "";
+            for (String[] letter : letters) {
+                line += letter[i] + "  ";
+            }
+            banner[i] = line;
+        }
 
-            String.join(" ",
-                    "** **", "** **", "***** ", "*****"
-            ),
-
-            String.join(" ",
-                    "** **", "** **", "**    ", "   **"
-            ),
-
-            String.join(" ",
-                    "** **", "** **", "**    ", "   **"
-            ),
-
-            String.join(" ",
-                    "** **", "** **", "**    ", "** **"
-            ),
-
-            String.join(" ",
-                    " *** ", " *** ", "**    ", "*****"
-            )
-        };
-
-        //  Loop through array
-        for (String line : lines) {
+        // Print using enhanced for loop
+        for (String line : banner) {
             System.out.println(line);
         }
     }
